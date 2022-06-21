@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AccountTextNoteCell" customModule="Accounts" customModuleProvider="target">
+            <connections>
+                <outlet property="noteTextField" destination="1Pr-m0-gKl" id="zGp-K0-KIF"/>
+                <outlet property="textField" destination="1Pr-m0-gKl" id="Umc-yG-g10"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0jL-o0-Jga"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="220" height="91"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1Pr-m0-gKl">
+                    <rect key="frame" x="0.0" y="0.0" width="220" height="68"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="0ka-VY-bpg"/>
+                        <constraint firstAttribute="height" constant="68" id="C3M-zQ-wYz"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="іва" drawsBackground="YES" id="yrU-Tz-Too">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rwT-nJ-ie5">
+                    <rect key="frame" x="5" y="69" width="55" height="16"/>
+                    <segmentedCell key="cell" controlSize="mini" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="iDW-jj-SPn">
+                        <font key="font" metaFont="miniSystem"/>
+                        <segments>
+                            <segment image="NSAddTemplate" width="18"/>
+                            <segment image="NSRemoveTemplate" width="26" selected="YES" tag="1"/>
+                        </segments>
+                    </segmentedCell>
+                    <connections>
+                        <action selector="adjustNoteWithSender:" target="-2" id="jqC-T1-gds"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <constraints>
+                <constraint firstItem="1Pr-m0-gKl" firstAttribute="top" secondItem="rwT-nJ-ie5" secondAttribute="bottom" constant="2" id="9FS-gL-O8Z"/>
+                <constraint firstItem="1Pr-m0-gKl" firstAttribute="top" secondItem="rwT-nJ-ie5" secondAttribute="bottom" constant="2" id="CYN-5w-2xD"/>
+                <constraint firstAttribute="trailing" secondItem="1Pr-m0-gKl" secondAttribute="trailing" id="J7F-Uc-DCH"/>
+                <constraint firstAttribute="bottom" secondItem="1Pr-m0-gKl" secondAttribute="bottom" id="N6d-ni-Doh"/>
+                <constraint firstItem="rwT-nJ-ie5" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="6" id="hkN-jC-lZQ"/>
+                <constraint firstItem="1Pr-m0-gKl" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="igz-FC-iEo"/>
+                <constraint firstAttribute="trailing" secondItem="rwT-nJ-ie5" secondAttribute="trailing" constant="161" id="lbA-5I-FzB"/>
+                <constraint firstItem="rwT-nJ-ie5" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="6" id="tbD-5Q-9mH"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="183.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSAddTemplate" width="14" height="13"/>
+        <image name="NSRemoveTemplate" width="14" height="4"/>
+    </resources>
+</document>
