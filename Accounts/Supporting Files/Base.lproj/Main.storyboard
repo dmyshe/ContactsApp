@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19529"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -775,7 +776,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="180" height="266"/>
                                 <clipView key="contentView" id="Vha-Yv-YbE">
                                     <rect key="frame" x="1" y="1" width="178" height="264"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowHeight="18" usesAutomaticRowHeights="YES" viewBased="YES" id="MuQ-Qa-boO">
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="264"/>
@@ -797,11 +798,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="E2n-4O-LlS">
-                                                            <rect key="frame" x="95" y="27" width="-95" height="17"/>
+                                                            <rect key="frame" x="95" y="27" width="0.0" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mg1-bw-nZ2">
-                                                                    <rect key="frame" x="101" y="1" width="0.0" height="16"/>
+                                                                    <rect key="frame" x="147" y="1" width="4" height="16"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="x3z-sP-ggX">
                                                                         <font key="font" usesAppearanceFont="YES"/>
@@ -890,14 +891,14 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="uploadImage:" target="37u-FL-cnI" id="R3q-Sp-RVE"/>
+                                    <action selector="uploadImage:" target="37u-FL-cnI" id="5Oe-X2-vYh"/>
                                 </connections>
                             </button>
                             <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTc-cI-CY7">
                                 <rect key="frame" x="20" y="23" width="335" height="140"/>
                                 <clipView key="contentView" id="OpQ-L9-NRp">
                                     <rect key="frame" x="0.0" y="0.0" width="335" height="140"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="bkj-Ju-WPY">
                                             <rect key="frame" x="0.0" y="0.0" width="335" height="140"/>
@@ -1036,12 +1037,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="avatarImage" destination="gxj-bR-1hD" id="CNC-9l-Yue"/>
                         <outlet property="collectionView" destination="bkj-Ju-WPY" id="DPV-pq-aB7"/>
-                        <outlet property="fullName" destination="gCZ-Fj-eit" id="fIm-50-y9U"/>
-                        <outlet property="name" destination="mFW-da-Dxa" id="bZz-00-kbJ"/>
-                        <outlet property="surname" destination="FkA-Mn-jse" id="0yc-KC-HDk"/>
-                        <outlet property="uploadPhotoButton" destination="Ss7-r4-8T7" id="Q8l-ap-KeK"/>
+                        <outlet property="contactAvatarImageView" destination="gxj-bR-1hD" id="CNC-9l-Yue"/>
+                        <outlet property="contactFullNameTF" destination="gCZ-Fj-eit" id="jzk-5B-M4d"/>
+                        <outlet property="contactNameTF" destination="mFW-da-Dxa" id="XtT-mf-Q5L"/>
+                        <outlet property="contactSurnameTF" destination="FkA-Mn-jse" id="God-P6-MsY"/>
                     </connections>
                 </viewController>
                 <customObject id="YdP-jI-Pv5" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

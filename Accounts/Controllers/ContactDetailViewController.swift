@@ -10,11 +10,10 @@ import Cocoa
 
 class ContactDetailViewController: NSViewController {
     // MARK: - IBOutlet
-    @IBOutlet var avatarImage: NSImageView!
-    @IBOutlet var uploadPhotoButton: NSButton!
-    @IBOutlet var fullName: NSTextField!
-    @IBOutlet var name: NSTextField!
-    @IBOutlet var surname: NSTextField!
+    @IBOutlet var contactAvatarImageView: NSImageView!
+    @IBOutlet var contactFullNameTF: NSTextField!
+    @IBOutlet var contactNameTF: NSTextField!
+    @IBOutlet var contactSurnameTF: NSTextField!
     @IBOutlet var collectionView: NSCollectionView!
     
     private var model: Contact?
@@ -38,12 +37,12 @@ class ContactDetailViewController: NSViewController {
 
         guard let account = self.model else { return }
         
-        fullName.stringValue = account.fullName
-        name.stringValue = account.name
-        surname.stringValue = account.surname
+        contactFullNameTF.stringValue = account.fullName
+        contactNameTF.stringValue = account.name
+        contactSurnameTF.stringValue = account.surname
         
         if let path = model.imagePhoto {
-            avatarImage.image = NSImage(contentsOf: URL(fileURLWithPath: path))
+            contactAvatarImageView.image = NSImage(contentsOf: URL(fileURLWithPath: path))
         }
         
         collectionView.reloadData()
@@ -56,13 +55,13 @@ class ContactDetailViewController: NSViewController {
     }
     
     private func configureTextFields() {
-        fullName.delegate = self
-        name.delegate = self
-        surname.delegate = self
+        contactFullNameTF.delegate = self
+        contactNameTF.delegate = self
+        contactSurnameTF.delegate = self
     }
     
     private func configureAvatarImage() {
-        avatarImage.image = NSImage(systemSymbolName: "person.crop.circle.fill", accessibilityDescription: nil)
+        contactAvatarImageView.image = NSImage(systemSymbolName: "person.crop.circle.fill", accessibilityDescription: nil)
     }
     
     // MARK: - IBAction
@@ -75,7 +74,7 @@ class ContactDetailViewController: NSViewController {
         openPanel.title = "Choose avatar photo"
         openPanel.begin { [weak self] result in
             if result == .OK, let imageURL = openPanel.url {
-                self?.avatarImage.image = NSImage(contentsOf: imageURL )
+                self?.contactAvatarImageView.image = NSImage(contentsOf: imageURL )
                 self?.model?.imagePhoto = imageURL.path
             } else {
                 openPanel.close()
@@ -138,9 +137,9 @@ extension ContactDetailViewController {
         if let contactName = notification.userInfo?["name"] as? String,
            let contactSurname = notification.userInfo?["surname"] as? String,
            let contactFullName = notification.userInfo?["fullName"] as? String {
-            name.stringValue = contactName
-            surname.stringValue = contactSurname
-            fullName.stringValue = contactFullName
+            contactNameTF.stringValue = contactName
+            contactSurnameTF.stringValue = contactSurname
+            contactFullNameTF.stringValue = contactFullName
         }
     }
 }
