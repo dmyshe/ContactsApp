@@ -62,7 +62,7 @@ extension SourceViewController: NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.makeView(withIdentifier: AccountInfoCell.reuseIdentifier, owner: self) as? AccountInfoCell else {  return nil }
         
-        let personFullName = dataManager.setPersonFullName(at: row)
+        let personFullName = dataManager.getContactFullName(at: row)
         cell.label.stringValue = personFullName
 
         return cell

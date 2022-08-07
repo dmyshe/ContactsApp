@@ -35,7 +35,7 @@ class ContactsDataManager {
         }
     }
     
-    func setPersonFullName(at index: Int) -> String  {
+    func getContactFullName(at index: Int) -> String  {
         return isFiltered ? filteredArray[index].fullName : arrayOfAccounts[index].fullName
     }
 }
