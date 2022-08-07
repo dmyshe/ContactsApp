@@ -1,5 +1,5 @@
 //
-//  DataManager.swift
+//  ContactsDataManager.swift
 //  Accounts
 //
 //  Created by Дмитро  on 06/05/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DataManager {
+class ContactsDataManager {
     var arrayOfAccounts = Account.exampleData
     var filteredArray: [Account] = []
     

@@ -13,7 +13,7 @@ class SourceViewController: NSViewController {
     @IBOutlet var tableView: NSTableView!
     
     // MARK: - Data manager
-    let dataManager = DataManager()
+    let dataManager = ContactsDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

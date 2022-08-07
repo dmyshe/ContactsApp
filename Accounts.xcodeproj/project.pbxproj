@@ -10,7 +10,7 @@
 		325A1C9D2823E03000CB41D5 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1C9C2823E03000CB41D5 /* MainSplitViewController.swift */; };
 		325A1CA8282409E700CB41D5 /* AccountTextNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1CA6282409E700CB41D5 /* AccountTextNoteCell.swift */; };
 		325A1CA9282409E700CB41D5 /* AccountTextNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325A1CA7282409E700CB41D5 /* AccountTextNoteCell.xib */; };
-		325A1CAF2824725E00CB41D5 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1CAE2824725E00CB41D5 /* DataManager.swift */; };
+		325A1CAF2824725E00CB41D5 /* ContactsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1CAE2824725E00CB41D5 /* ContactsDataManager.swift */; };
 		32A964E3281FDB490074FE7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A964E2281FDB490074FE7C /* AppDelegate.swift */; };
 		32A964E5281FDB490074FE7C /* SourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A964E4281FDB490074FE7C /* SourceViewController.swift */; };
 		32A964E7281FDB4C0074FE7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32A964E6281FDB4C0074FE7C /* Assets.xcassets */; };
@@ -26,7 +26,7 @@
 		325A1C9C2823E03000CB41D5 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
 		325A1CA6282409E700CB41D5 /* AccountTextNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTextNoteCell.swift; sourceTree = "<group>"; };
 		325A1CA7282409E700CB41D5 /* AccountTextNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTextNoteCell.xib; sourceTree = "<group>"; };
-		325A1CAE2824725E00CB41D5 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		325A1CAE2824725E00CB41D5 /* ContactsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDataManager.swift; sourceTree = "<group>"; };
 		32A964DF281FDB490074FE7C /* Accounts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Accounts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32A964E2281FDB490074FE7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32A964E4281FDB490074FE7C /* SourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		32470FE72829B08000C318BA /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				325A1CAE2824725E00CB41D5 /* DataManager.swift */,
+				325A1CAE2824725E00CB41D5 /* ContactsDataManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				325A1C9D2823E03000CB41D5 /* MainSplitViewController.swift in Sources */,
-				325A1CAF2824725E00CB41D5 /* DataManager.swift in Sources */,
+				325A1CAF2824725E00CB41D5 /* ContactsDataManager.swift in Sources */,
 				32A964F2281FDF3C0074FE7C /* DetailViewController.swift in Sources */,
 				32A964E5281FDB490074FE7C /* SourceViewController.swift in Sources */,
 				32A96502281FF2610074FE7C /* Note.swift in Sources */,
