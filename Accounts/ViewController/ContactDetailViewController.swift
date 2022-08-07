@@ -9,9 +9,6 @@ import Cocoa
 
 
 class ContactDetailViewController: NSViewController {
-    
-    private var model: Contact?
-        
     // MARK: - IBOutlet
     @IBOutlet var avatarImage: NSImageView!
     @IBOutlet var uploadPhotoButton: NSButton!
@@ -19,6 +16,8 @@ class ContactDetailViewController: NSViewController {
     @IBOutlet var name: NSTextField!
     @IBOutlet var surname: NSTextField!
     @IBOutlet var collectionView: NSCollectionView!
+    
+    private var model: Contact?
     
     private enum TextFieldType: Int {
         case fullName, name, surname
