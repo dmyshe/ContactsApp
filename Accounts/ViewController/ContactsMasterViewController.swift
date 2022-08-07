@@ -1,5 +1,5 @@
 //
-//  SourceViewController.swift
+//  ContactsMasterViewController.swift
 //  Accounts
 //
 //  Created by Дмитро  on 02/05/22.
@@ -7,7 +7,7 @@
 
 import Cocoa
 
-class SourceViewController: NSViewController {
+class ContactsMasterViewController: NSViewController {
     // MARK: - IBOutlet
     @IBOutlet var searchTextField: NSTextField!
     @IBOutlet var tableView: NSTableView!
@@ -45,7 +45,7 @@ class SourceViewController: NSViewController {
 }
 
 // MARK: - NSTableViewDelegate
-extension SourceViewController: NSTableViewDelegate {
+extension ContactsMasterViewController: NSTableViewDelegate {
     func tableViewSelectionDidChange(_ notification: Notification) {
         guard tableView.selectedRow != -1 else { return }
         guard let splitVC = parent as? NSSplitViewController else { return }
@@ -58,7 +58,7 @@ extension SourceViewController: NSTableViewDelegate {
 }
 
 // MARK: - NSTableViewDataSource
-extension SourceViewController: NSTableViewDataSource {
+extension ContactsMasterViewController: NSTableViewDataSource {
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.makeView(withIdentifier: AccountInfoCell.reuseIdentifier, owner: self) as? AccountInfoCell else {  return nil }
@@ -77,7 +77,7 @@ extension SourceViewController: NSTableViewDataSource {
     }
 }
 
-extension SourceViewController {
+extension ContactsMasterViewController {
     func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateLabel(_:)), name: NSNotification.Name("contactInfoDidChange"), object: nil)
     }
@@ -93,7 +93,7 @@ extension SourceViewController {
 }
 
 // MARK: -  NSTextFieldDelegate
-extension SourceViewController: NSTextFieldDelegate {
+extension ContactsMasterViewController: NSTextFieldDelegate {
     func controlTextDidChange(_ obj: Notification) {
         guard let searchTextField = obj.object as? NSTextField else { return }
         let searchText = searchTextField.stringValue
