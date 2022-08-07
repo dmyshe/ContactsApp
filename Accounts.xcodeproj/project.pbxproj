@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		325A1C9D2823E03000CB41D5 /* MainSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1C9C2823E03000CB41D5 /* MainSplitViewController.swift */; };
+		325A1C9D2823E03000CB41D5 /* ContactsSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1C9C2823E03000CB41D5 /* ContactsSplitViewController.swift */; };
 		325A1CA8282409E700CB41D5 /* AccountTextNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1CA6282409E700CB41D5 /* AccountTextNoteCell.swift */; };
 		325A1CA9282409E700CB41D5 /* AccountTextNoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325A1CA7282409E700CB41D5 /* AccountTextNoteCell.xib */; };
 		325A1CAF2824725E00CB41D5 /* ContactsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325A1CAE2824725E00CB41D5 /* ContactsDataManager.swift */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		325A1C9C2823E03000CB41D5 /* MainSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSplitViewController.swift; sourceTree = "<group>"; };
+		325A1C9C2823E03000CB41D5 /* ContactsSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsSplitViewController.swift; sourceTree = "<group>"; };
 		325A1CA6282409E700CB41D5 /* AccountTextNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTextNoteCell.swift; sourceTree = "<group>"; };
 		325A1CA7282409E700CB41D5 /* AccountTextNoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountTextNoteCell.xib; sourceTree = "<group>"; };
 		325A1CAE2824725E00CB41D5 /* ContactsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDataManager.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			children = (
 				32A964E4281FDB490074FE7C /* ContactsMasterViewController.swift */,
 				32A964F1281FDF3C0074FE7C /* ContactDetailViewController.swift */,
-				325A1C9C2823E03000CB41D5 /* MainSplitViewController.swift */,
+				325A1C9C2823E03000CB41D5 /* ContactsSplitViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				325A1C9D2823E03000CB41D5 /* MainSplitViewController.swift in Sources */,
+				325A1C9D2823E03000CB41D5 /* ContactsSplitViewController.swift in Sources */,
 				325A1CAF2824725E00CB41D5 /* ContactsDataManager.swift in Sources */,
 				32A964F2281FDF3C0074FE7C /* ContactDetailViewController.swift in Sources */,
 				32A964E5281FDB490074FE7C /* ContactsMasterViewController.swift in Sources */,

@@ -738,10 +738,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Main Split View Controller-->
+        <!--Contacts Split View Controller-->
         <scene sceneID="Hrc-Cj-8sp">
             <objects>
-                <splitViewController id="sxU-r6-FPN" customClass="MainSplitViewController" customModule="Accounts" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController id="sxU-r6-FPN" customClass="ContactsSplitViewController" customModule="Accounts" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="tjd-aU-OTW"/>
                         <splitViewItem id="lU7-7L-tuF"/>

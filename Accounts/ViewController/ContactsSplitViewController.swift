@@ -7,5 +7,5 @@
 
 import Cocoa
 
-class MainSplitViewController: NSSplitViewController {
+class ContactsSplitViewController: NSSplitViewController {
 }
