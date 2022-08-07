@@ -18,6 +18,7 @@ class SourceViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        addObserver()
     }
     
     // MARK: - IBAction
@@ -28,9 +29,9 @@ class SourceViewController: NSViewController {
                                  note: [
                                     Note(text: "")
                                  ])
-        newAccount.accountInfoDelegate = self
+        //TODO: Note create
         contactsDataManager.arrayOfAccounts.append(newAccount)
-        reloadData()
+        tableView.reloadData()
     }
     
     private func setupTableView() {
@@ -38,7 +39,7 @@ class SourceViewController: NSViewController {
         tableView.register( cell.self , forIdentifier: AccountInfoCell.reuseIdentifier)
 
         for i in contactsDataManager.arrayOfAccounts.indices {
-            contactsDataManager.arrayOfAccounts[i].accountInfoDelegate = self
+           //TODO: Note fix delegate
         }
     }
 }
@@ -76,20 +77,18 @@ extension SourceViewController: NSTableViewDataSource {
     }
 }
 
-// MARK: -  AccountInfoDelegate
-extension SourceViewController: AccountInfoDelegate {
-    func accountInfoDidChange(_ account: Contact) {
+extension SourceViewController {
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLabel(_:)), name: NSNotification.Name("contactInfoDidChange"), object: nil)
+    }
+    
+    @objc func updateLabel(_ notification: NSNotification) {
         if contactsDataManager.isFiltered {
             let searchText = searchTextField.stringValue
             contactsDataManager.contains(searchText)
         }
-        reloadData()
-    }
-    
-    func reloadData() {        
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+
+        tableView.reloadData()
     }
 }
 
@@ -102,7 +101,7 @@ extension SourceViewController: NSTextFieldDelegate {
         contactsDataManager.isFiltered = !searchText.isEmpty
         contactsDataManager.contains(searchText)
         
-        reloadData()
+        tableView.reloadData()
     }
 }
 

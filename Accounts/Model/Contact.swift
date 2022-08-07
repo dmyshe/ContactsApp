@@ -7,29 +7,16 @@
 
 import Foundation
 
-
-protocol AccountTextFieldDelegate: AnyObject {
-    func accountFullNameDidChange(_ account: Contact)
-}
-
-protocol AccountInfoDelegate: AnyObject {
-    func reloadData()
-    func accountInfoDidChange(_ account: Contact)
-}
-
-
 class Contact  {
     var name: String  {
         didSet {
-            accountTextFieldDelegate?.accountFullNameDidChange(self)
-            accountInfoDelegate?.accountInfoDidChange(self)
+            postNotificationCenter()
         }
     }
     
     var surname: String {
         didSet {
-            accountTextFieldDelegate?.accountFullNameDidChange(self)
-            accountInfoDelegate?.accountInfoDidChange(self)
+            postNotificationCenter()
         }
     }
     
@@ -39,8 +26,7 @@ class Contact  {
         }
         set {
             separateFullName(newValue)
-            accountTextFieldDelegate?.accountFullNameDidChange(self)
-            accountInfoDelegate?.accountInfoDidChange(self)
+            postNotificationCenter()
         }
     }
     
@@ -48,13 +34,10 @@ class Contact  {
     
     var note: [Note]? {
         didSet {
-            accountInfoDelegate?.accountInfoDidChange(self)
+//            accountInfoDelegate?.contactInfoDidChange(self)
         }
     }
-    
-    weak var accountTextFieldDelegate: AccountTextFieldDelegate?
-    weak var accountInfoDelegate: AccountInfoDelegate?
-    
+        
     init(name: String, surname: String, imagePhoto: String?, note: Array<Note>? = nil) {
         self.name = name
         self.surname = surname
@@ -71,6 +54,11 @@ class Contact  {
             self.name = String(fullName[0])
             self.surname = String(fullName[1])
         }
+    }
+    
+    private func postNotificationCenter() {
+        let contactInfo: [String : Any] = ["name": name, "surname": surname,"fullName": fullName, "note": note as Any]
+        NotificationCenter.default.post(name: NSNotification.Name("contactInfoDidChange"), object: nil,userInfo: contactInfo)
     }
 }
 

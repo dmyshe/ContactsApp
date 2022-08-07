@@ -36,11 +36,12 @@ class DetailViewController: NSViewController {
         configureCollectionView()
         configureAvatarImage()
         self.view.isHidden = true
+        
+        addObserver()
     }
 
     public func configure(with model: Contact) {
         self.model = model
-        self.model?.accountTextFieldDelegate = self
 
         guard let account = self.model else { return }
         
@@ -134,13 +135,21 @@ extension DetailViewController: NSTextFieldDelegate {
 }
 
 // MARK: - ChangeAccountFullNameDelegate
-extension DetailViewController: AccountTextFieldDelegate {
- 
-    func accountFullNameDidChange(_ account: Contact) {
-        fullName.stringValue = account.fullName
-        name.stringValue = account.name
-        surname.stringValue = account.surname
-     }
+extension DetailViewController {
+
+    func addObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLabel(_:)), name: NSNotification.Name("contactInfoDidChange"), object: nil)
+    }
+    
+    @objc func updateLabel(_ notification: NSNotification) {
+        if let contactName = notification.userInfo?["name"] as? String,
+           let contactSurname = notification.userInfo?["surname"] as? String,
+           let contactFullName = notification.userInfo?["fullName"] as? String {
+            name.stringValue = contactName
+            surname.stringValue = contactSurname
+            fullName.stringValue = contactFullName
+        }
+    }
 }
 
 // MARK: - AccountTextNoteCellDelegate
