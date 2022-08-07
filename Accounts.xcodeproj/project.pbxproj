@@ -51,12 +51,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32470FE72829B08000C318BA /* Manager */ = {
+		32470FE72829B08000C318BA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				325A1CAE2824725E00CB41D5 /* ContactsDataManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		325A1CA5282409D700CB41D5 /* AccountTextNoteCell */ = {
@@ -68,23 +68,23 @@
 			path = AccountTextNoteCell;
 			sourceTree = "<group>";
 		};
-		325A1CAA28240A6900CB41D5 /* Cell */ = {
+		325A1CAA28240A6900CB41D5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				327324DB2822FA7E00E51BFF /* AccountInfoCell */,
 				325A1CA5282409D700CB41D5 /* AccountTextNoteCell */,
 			);
-			path = Cell;
+			path = Cells;
 			sourceTree = "<group>";
 		};
-		325A1CAB28240A8F00CB41D5 /* ViewController */ = {
+		325A1CAB28240A8F00CB41D5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				32A964E4281FDB490074FE7C /* ContactsMasterViewController.swift */,
 				32A964F1281FDF3C0074FE7C /* ContactDetailViewController.swift */,
 				325A1C9C2823E03000CB41D5 /* ContactsSplitViewController.swift */,
 			);
-			path = ViewController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		327324DB2822FA7E00E51BFF /* AccountInfoCell */ = {
@@ -115,12 +115,12 @@
 		32A964E1281FDB490074FE7C /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				32A964F8281FEF570074FE7C /* Model */,
-				32A964F5281FE78D0074FE7C /* View */,
 				32A964F4281FE6FC0074FE7C /* App */,
-				325A1CAB28240A8F00CB41D5 /* ViewController */,
+				325A1CAB28240A8F00CB41D5 /* Controllers */,
+				32470FE72829B08000C318BA /* Managers */,
+				32A964F8281FEF570074FE7C /* Models */,
 				32A964F3281FE5810074FE7C /* Supporting Files */,
-				32470FE72829B08000C318BA /* Manager */,
+				32A964F5281FE78D0074FE7C /* Views */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -143,21 +143,21 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		32A964F5281FE78D0074FE7C /* View */ = {
+		32A964F5281FE78D0074FE7C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				325A1CAA28240A6900CB41D5 /* Cell */,
+				325A1CAA28240A6900CB41D5 /* Cells */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		32A964F8281FEF570074FE7C /* Model */ = {
+		32A964F8281FEF570074FE7C /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				32A964FF281FF1630074FE7C /* Contact.swift */,
 				32A96501281FF2610074FE7C /* Note.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
