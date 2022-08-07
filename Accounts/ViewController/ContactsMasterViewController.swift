@@ -50,7 +50,7 @@ extension ContactsMasterViewController: NSTableViewDelegate {
         guard tableView.selectedRow != -1 else { return }
         guard let splitVC = parent as? NSSplitViewController else { return }
 
-        if let detail = splitVC.children[1] as? DetailViewController {
+        if let detail = splitVC.children[1] as? ContactDetailViewController {
             detail.configure(with: contactsDataManager.arrayOfAccounts[tableView.selectedRow])
             detail.view.isHidden = false
         }

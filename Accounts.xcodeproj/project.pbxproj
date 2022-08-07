@@ -15,7 +15,7 @@
 		32A964E5281FDB490074FE7C /* ContactsMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A964E4281FDB490074FE7C /* ContactsMasterViewController.swift */; };
 		32A964E7281FDB4C0074FE7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32A964E6281FDB4C0074FE7C /* Assets.xcassets */; };
 		32A964EA281FDB4D0074FE7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32A964E8281FDB4D0074FE7C /* Main.storyboard */; };
-		32A964F2281FDF3C0074FE7C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A964F1281FDF3C0074FE7C /* DetailViewController.swift */; };
+		32A964F2281FDF3C0074FE7C /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A964F1281FDF3C0074FE7C /* ContactDetailViewController.swift */; };
 		32A964F7281FE8200074FE7C /* AccountInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A964F6281FE8200074FE7C /* AccountInfoCell.swift */; };
 		32A96500281FF1630074FE7C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A964FF281FF1630074FE7C /* Contact.swift */; };
 		32A96502281FF2610074FE7C /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A96501281FF2610074FE7C /* Note.swift */; };
@@ -33,7 +33,7 @@
 		32A964E6281FDB4C0074FE7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32A964E9281FDB4D0074FE7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32A964EB281FDB4D0074FE7C /* Accounts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Accounts.entitlements; sourceTree = "<group>"; };
-		32A964F1281FDF3C0074FE7C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		32A964F1281FDF3C0074FE7C /* ContactDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		32A964F6281FE8200074FE7C /* AccountInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoCell.swift; sourceTree = "<group>"; };
 		32A964FF281FF1630074FE7C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		32A96501281FF2610074FE7C /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				32A964E4281FDB490074FE7C /* ContactsMasterViewController.swift */,
-				32A964F1281FDF3C0074FE7C /* DetailViewController.swift */,
+				32A964F1281FDF3C0074FE7C /* ContactDetailViewController.swift */,
 				325A1C9C2823E03000CB41D5 /* MainSplitViewController.swift */,
 			);
 			path = ViewController;
@@ -234,7 +234,7 @@
 			files = (
 				325A1C9D2823E03000CB41D5 /* MainSplitViewController.swift in Sources */,
 				325A1CAF2824725E00CB41D5 /* ContactsDataManager.swift in Sources */,
-				32A964F2281FDF3C0074FE7C /* DetailViewController.swift in Sources */,
+				32A964F2281FDF3C0074FE7C /* ContactDetailViewController.swift in Sources */,
 				32A964E5281FDB490074FE7C /* ContactsMasterViewController.swift in Sources */,
 				32A96502281FF2610074FE7C /* Note.swift in Sources */,
 				32A96500281FF1630074FE7C /* Contact.swift in Sources */,

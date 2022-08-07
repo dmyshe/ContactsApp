@@ -864,10 +864,10 @@
             </objects>
             <point key="canvasLocation" x="864" y="438"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Contact Detail View Controller-->
         <scene sceneID="0ix-ed-lol">
             <objects>
-                <viewController id="37u-FL-cnI" customClass="DetailViewController" customModule="Accounts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="37u-FL-cnI" customClass="ContactDetailViewController" customModule="Accounts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Nfn-Nu-dw4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="312"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -12,7 +12,7 @@ protocol DetailViewControllerDelegate: AnyObject {
     func reloadData()
 }
 
-class DetailViewController: NSViewController {
+class ContactDetailViewController: NSViewController {
     
     private var model: Contact?
     
@@ -92,7 +92,7 @@ class DetailViewController: NSViewController {
 }
 
 // MARK: - NSCollectionViewDataSource
-extension DetailViewController: NSCollectionViewDataSource {
+extension ContactDetailViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         
         guard let item = collectionView.makeItem(withIdentifier: AccountTextNoteCell.reuseIdentifier , for: indexPath) as? AccountTextNoteCell else {  return NSCollectionViewItem() }
@@ -112,7 +112,7 @@ extension DetailViewController: NSCollectionViewDataSource {
 
 
 // MARK: - NSTextFieldDelegate
-extension DetailViewController: NSTextFieldDelegate {
+extension ContactDetailViewController: NSTextFieldDelegate {
     func controlTextDidEndEditing(_ obj: Notification) {
         guard let textField = obj.object as? NSTextField else { return }
         
@@ -135,7 +135,7 @@ extension DetailViewController: NSTextFieldDelegate {
 }
 
 // MARK: - ChangeAccountFullNameDelegate
-extension DetailViewController {
+extension ContactDetailViewController {
 
     func addObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateLabel(_:)), name: NSNotification.Name("contactInfoDidChange"), object: nil)
@@ -153,7 +153,7 @@ extension DetailViewController {
 }
 
 // MARK: - AccountTextNoteCellDelegate
-extension DetailViewController: AccountTextNoteCellDelegate {
+extension ContactDetailViewController: AccountTextNoteCellDelegate {
     func addNote(_ item: NSCollectionViewItem) {
         guard  let item = collectionView.indexPath(for: item) else { return }
         let index = item.item
