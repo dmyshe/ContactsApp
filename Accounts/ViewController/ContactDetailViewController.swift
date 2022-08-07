@@ -8,16 +8,10 @@
 import Cocoa
 
 
-protocol DetailViewControllerDelegate: AnyObject {
-    func reloadData()
-}
-
 class ContactDetailViewController: NSViewController {
     
     private var model: Contact?
-    
-    weak var delegate: DetailViewControllerDelegate?
-    
+        
     // MARK: - IBOutlet
     @IBOutlet var avatarImage: NSImageView!
     @IBOutlet var uploadPhotoButton: NSButton!
