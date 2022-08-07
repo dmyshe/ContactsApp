@@ -13,7 +13,7 @@ class SourceViewController: NSViewController {
     @IBOutlet var tableView: NSTableView!
     
     // MARK: - Data manager
-    let dataManager = ContactsDataManager()
+    let contactsDataManager = ContactsDataManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class SourceViewController: NSViewController {
                                     Note(text: "")
                                  ])
         newAccount.accountInfoDelegate = self
-        dataManager.arrayOfAccounts.append(newAccount)
+        contactsDataManager.arrayOfAccounts.append(newAccount)
         reloadData()
     }
     
@@ -37,8 +37,8 @@ class SourceViewController: NSViewController {
         let cell = NSNib(nibNamed: NSNib.Name("AccountInfoCell"), bundle: nil)
         tableView.register( cell.self , forIdentifier: AccountInfoCell.reuseIdentifier)
 
-        for i in dataManager.arrayOfAccounts.indices {
-            dataManager.arrayOfAccounts[i].accountInfoDelegate = self
+        for i in contactsDataManager.arrayOfAccounts.indices {
+            contactsDataManager.arrayOfAccounts[i].accountInfoDelegate = self
         }
     }
 }
@@ -50,7 +50,7 @@ extension SourceViewController: NSTableViewDelegate {
         guard let splitVC = parent as? NSSplitViewController else { return }
 
         if let detail = splitVC.children[1] as? DetailViewController {
-            detail.configure(with: dataManager.arrayOfAccounts[tableView.selectedRow])
+            detail.configure(with: contactsDataManager.arrayOfAccounts[tableView.selectedRow])
             detail.view.isHidden = false
         }
     }
@@ -62,26 +62,26 @@ extension SourceViewController: NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.makeView(withIdentifier: AccountInfoCell.reuseIdentifier, owner: self) as? AccountInfoCell else {  return nil }
         
-        let personFullName = dataManager.getContactFullName(at: row)
-        cell.label.stringValue = personFullName
+        let contactFullName = contactsDataManager.getContactFullName(at: row)
+        cell.label.stringValue = contactFullName
 
         return cell
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        let filteredAccounts = dataManager.filteredArray.count
-        let arrayOfAccounts = dataManager.arrayOfAccounts.count
+        let filteredAccounts = contactsDataManager.filteredArray.count
+        let arrayOfAccounts = contactsDataManager.arrayOfAccounts.count
         
-        return  dataManager.isFiltered ? filteredAccounts :  arrayOfAccounts
+        return  contactsDataManager.isFiltered ? filteredAccounts :  arrayOfAccounts
     }
 }
 
 // MARK: -  AccountInfoDelegate
 extension SourceViewController: AccountInfoDelegate {
     func accountInfoDidChange(_ account: Account) {
-        if dataManager.isFiltered {
+        if contactsDataManager.isFiltered {
             let searchText = searchTextField.stringValue
-            dataManager.checkIfContains(searchText)
+            contactsDataManager.contains(searchText)
         }
         reloadData()
     }
@@ -99,8 +99,8 @@ extension SourceViewController: NSTextFieldDelegate {
         guard let searchTextField = obj.object as? NSTextField else { return }
         let searchText = searchTextField.stringValue
         
-        dataManager.isFiltered = !searchText.isEmpty
-        dataManager.checkIfContains(searchText)
+        contactsDataManager.isFiltered = !searchText.isEmpty
+        contactsDataManager.contains(searchText)
         
         reloadData()
     }

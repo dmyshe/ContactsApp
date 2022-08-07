@@ -13,7 +13,7 @@ class ContactsDataManager {
     
     var isFiltered: Bool = false 
     
-    func checkIfContains(_ text: String)  {
+    func contains(_ text: String)  {
         filteredArray.removeAll()
         
         guard text != " " else { return }
