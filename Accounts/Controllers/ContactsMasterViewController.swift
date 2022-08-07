@@ -23,14 +23,14 @@ class ContactsMasterViewController: NSViewController {
     
     // MARK: - IBAction
     @IBAction func addNewAccount(_ sender: NSButton) {
-        let newAccount = Contact(name: "New",
-                                 surname: "Account",
+        let newContacts = Contact(name: "New",
+                                 surname: "Contacts",
                                  imagePhoto: nil,
                                  note: [
                                     Note(text: "")
                                  ])
         //TODO: Note create
-        contactsDataManager.arrayOfAccounts.append(newAccount)
+        contactsDataManager.contacts.append(newContacts)
         tableView.reloadData()
     }
     
@@ -38,7 +38,7 @@ class ContactsMasterViewController: NSViewController {
         let cell = NSNib(nibNamed: NSNib.Name("AccountInfoCell"), bundle: nil)
         tableView.register( cell.self , forIdentifier: AccountInfoCell.reuseIdentifier)
 
-        for i in contactsDataManager.arrayOfAccounts.indices {
+        for _ in contactsDataManager.contacts.indices {
            //TODO: Note fix delegate
         }
     }
@@ -51,7 +51,7 @@ extension ContactsMasterViewController: NSTableViewDelegate {
         guard let splitVC = parent as? NSSplitViewController else { return }
 
         if let detail = splitVC.children[1] as? ContactDetailViewController {
-            detail.configure(with: contactsDataManager.arrayOfAccounts[tableView.selectedRow])
+            detail.configure(with: contactsDataManager.contacts[tableView.selectedRow])
             detail.view.isHidden = false
         }
     }
@@ -59,7 +59,6 @@ extension ContactsMasterViewController: NSTableViewDelegate {
 
 // MARK: - NSTableViewDataSource
 extension ContactsMasterViewController: NSTableViewDataSource {
-
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.makeView(withIdentifier: AccountInfoCell.reuseIdentifier, owner: self) as? AccountInfoCell else {  return nil }
         
@@ -70,10 +69,10 @@ extension ContactsMasterViewController: NSTableViewDataSource {
     }
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        let filteredAccounts = contactsDataManager.filteredArray.count
-        let arrayOfAccounts = contactsDataManager.arrayOfAccounts.count
+        let filteredContacts = contactsDataManager.filteredContacts.count
+        let contacts = contactsDataManager.contacts.count
         
-        return  contactsDataManager.isFiltered ? filteredAccounts :  arrayOfAccounts
+        return  !contactsDataManager.isFiltered ? contacts :  filteredContacts
     }
 }
 
