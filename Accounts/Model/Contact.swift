@@ -9,16 +9,16 @@ import Foundation
 
 
 protocol AccountTextFieldDelegate: AnyObject {
-    func accountFullNameDidChange(_ account: Account)
+    func accountFullNameDidChange(_ account: Contact)
 }
 
 protocol AccountInfoDelegate: AnyObject {
     func reloadData()
-    func accountInfoDidChange(_ account: Account)
+    func accountInfoDidChange(_ account: Contact)
 }
 
 
-class Account  {
+class Contact  {
     var name: String  {
         didSet {
             accountTextFieldDelegate?.accountFullNameDidChange(self)
@@ -74,13 +74,13 @@ class Account  {
     }
 }
 
-extension Account {
+extension Contact {
     static var exampleData = [
-        Account(name: "James", surname: "Bond", imagePhoto: nil, note: [
+        Contact(name: "James", surname: "Bond", imagePhoto: nil, note: [
         Note(text: "Hello everyone"),
         Note(text: "Nice")
         ]),
-        Account(name: "Sasha", surname: "Smiley", imagePhoto: nil, note: nil),
+        Contact(name: "Sasha", surname: "Smiley", imagePhoto: nil, note: nil),
     ]
 }
 

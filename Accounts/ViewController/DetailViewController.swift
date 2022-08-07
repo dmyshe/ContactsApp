@@ -14,7 +14,7 @@ protocol DetailViewControllerDelegate: AnyObject {
 
 class DetailViewController: NSViewController {
     
-    private var model: Account?
+    private var model: Contact?
     
     weak var delegate: DetailViewControllerDelegate?
     
@@ -38,7 +38,7 @@ class DetailViewController: NSViewController {
         self.view.isHidden = true
     }
 
-    public func configure(with model: Account) {
+    public func configure(with model: Contact) {
         self.model = model
         self.model?.accountTextFieldDelegate = self
 
@@ -136,7 +136,7 @@ extension DetailViewController: NSTextFieldDelegate {
 // MARK: - ChangeAccountFullNameDelegate
 extension DetailViewController: AccountTextFieldDelegate {
  
-    func accountFullNameDidChange(_ account: Account) {
+    func accountFullNameDidChange(_ account: Contact) {
         fullName.stringValue = account.fullName
         name.stringValue = account.name
         surname.stringValue = account.surname

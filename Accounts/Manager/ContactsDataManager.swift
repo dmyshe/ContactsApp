@@ -8,8 +8,8 @@
 import Foundation
 
 class ContactsDataManager {
-    var arrayOfAccounts = Account.exampleData
-    var filteredArray: [Account] = []
+    var arrayOfAccounts = Contact.exampleData
+    var filteredArray: [Contact] = []
     
     var isFiltered: Bool = false 
     

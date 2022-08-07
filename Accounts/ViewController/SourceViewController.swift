@@ -22,7 +22,7 @@ class SourceViewController: NSViewController {
     
     // MARK: - IBAction
     @IBAction func addNewAccount(_ sender: NSButton) {
-        let newAccount = Account(name: "New",
+        let newAccount = Contact(name: "New",
                                  surname: "Account",
                                  imagePhoto: nil,
                                  note: [
@@ -78,7 +78,7 @@ extension SourceViewController: NSTableViewDataSource {
 
 // MARK: -  AccountInfoDelegate
 extension SourceViewController: AccountInfoDelegate {
-    func accountInfoDidChange(_ account: Account) {
+    func accountInfoDidChange(_ account: Contact) {
         if contactsDataManager.isFiltered {
             let searchText = searchTextField.stringValue
             contactsDataManager.contains(searchText)
