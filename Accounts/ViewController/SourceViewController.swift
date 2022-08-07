@@ -62,7 +62,7 @@ extension SourceViewController: NSTableViewDataSource {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         guard let cell = tableView.makeView(withIdentifier: AccountInfoCell.reuseIdentifier, owner: self) as? AccountInfoCell else {  return nil }
         
-        let personFullName = dataManager.setPersonFullNameInArray(at: row)
+        let personFullName = dataManager.setPersonFullName(at: row)
         cell.label.stringValue = personFullName
 
         return cell
@@ -81,7 +81,7 @@ extension SourceViewController: AccountInfoDelegate {
     func accountInfoDidChange(_ account: Account) {
         if dataManager.isFiltered {
             let searchText = searchTextField.stringValue
-            dataManager.checkIfAccountsArrayContains(searchText)
+            dataManager.checkIfContains(searchText)
         }
         reloadData()
     }
@@ -100,7 +100,7 @@ extension SourceViewController: NSTextFieldDelegate {
         let searchText = searchTextField.stringValue
         
         dataManager.isFiltered = !searchText.isEmpty
-        dataManager.checkIfAccountsArrayContains(searchText)
+        dataManager.checkIfContains(searchText)
         
         reloadData()
     }

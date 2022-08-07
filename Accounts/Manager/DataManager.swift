@@ -13,15 +13,17 @@ class DataManager {
     
     var isFiltered: Bool = false 
     
-    func checkIfAccountsArrayContains(_ text: String)  {
+    func checkIfContains(_ text: String)  {
         filteredArray.removeAll()
         
         guard text != " " else { return }
         
         let textFieldText = text.lowercased()
         
+        
         arrayOfAccounts.forEach { account in
-            if account.fullName.lowercased().contains(textFieldText)  {
+            let accountFullName = account.fullName.lowercased()
+            if accountFullName.contains(textFieldText)  {
                     filteredArray.append(account)
             }
         }
@@ -33,7 +35,7 @@ class DataManager {
         }
     }
     
-    func setPersonFullNameInArray(at index: Int) -> String  {
+    func setPersonFullName(at index: Int) -> String  {
         return isFiltered ? filteredArray[index].fullName : arrayOfAccounts[index].fullName
     }
 }
